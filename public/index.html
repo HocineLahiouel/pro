@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+       
+        <div class="cart-section">
+            <button class="new-customer-btn" id="newCustomerBtn">+ New Customer</button>
+            <div class="customer-select">
+                <label>Customer</label>
+                <select id="customerSelect">
+                    <option value="">Choose Customer</option>
+                </select>
+            </div>
+            <div class="warehouse-select">
+                <label>Warehouse</label>
+                <select id="warehouseSelect">
+                    <option value="usa">Warehouse USA</option>
+                    <option value="canada">Warehouse Canada</option>
+                    <option value="canada">Warehouse Italy</option>
+                    <option value="canada">Warehouse Algeria</option>
+                   
+                </select>
+            </div>
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>Subtotal</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="cartItems">
+                    
+                </tbody>
+            </table>
+            <div class="cart-footer">
+                <div class="calculations">
+                    <div class="calc-item">
+                        <label>Order Tax</label>
+                        <input type="number" id="orderTax" value="0">
+                        <span>%</span>
+                    </div>
+                    <div class="calc-item">
+                        <label>Discount</label>
+                        <input type="number" id="discount" value="0">
+                        <span>%</span>
+                    </div>
+                    <div class="calc-item">
+                        <label>Shipping</label>
+                        <input type="number" id="shipping" value="0">
+                        <span>$</span>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="reset-btn" id="resetBtn">Reset</button>
+                    <button class="pay-btn" id="payBtn">Pay Now</button>
+                </div>
+            </div>
+        </div>
+    
+        
+        <div class="products-section">
+            <div class="product-header">
+                <button class="add-product-btn" id="addProductBtn">+ Add New Product</button>
+                <button class="category-btn" id="categoryListBtn">List of Category</button>
+                <button class="brand-btn">Brand List</button>
+                <input type="text" class="search-input" placeholder="Search by Name">
+            </div>
+            <div class="products-grid" id="productsGrid">
+                
+            </div>
+        </div>
+    </div>
+
+        
+            <div class="category-list" id="categoryList">
+                <h3>Categories</h3>
+                <ul>
+                    <li>Electronics</li>
+                    <li>Clothing</li>
+                    <li>Home & Kitchen</li>
+                    <li>Books</li>
+                    <li>Beauty</li>
+                </ul>
+            </div>
+
+            
+
+            <div class="pagination">
+                <button class="prev-btn">←</button>
+                <span class="page-number active">1</span>
+                <span class="page-number">2</span>
+                <span class="page-number">3</span>
+                <button class="next-btn">→</button>
+            </div>
+
+    
+    <div class="modal" id="newCustomerModal">
+        <div class="modal-content">
+            <h2>Add New Customer</h2>
+            <form id="newCustomerForm">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" name="phone" required>
+                </div>
+                <button type="submit">Save Changes</button>
+                <button type="button" class="close-btn">Cancel</button>
+            </form>
+        </div>
+    </div>
+            
+         
+            </form>
+        </div>
+    </div>
+
+    
+    <div class="modal" id="newProductModal">
+        <div class="modal-content">
+            <h2>Add New Product</h2>
+            <form id="newProductForm">
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input type="text" name="productName" required>
+                </div>
+                <div class="form-group">
+                    <label>Price</label>
+                    <input type="number" name="price" required>
+                </div>
+                <div class="form-group">
+                    <label>Product Image</label>
+                    <input type="file" name="productImage" accept="image/*" required>
+                </div>
+                <button type="submit">Save Product</button>
+                <button type="button" class="close-btn">Cancel</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
